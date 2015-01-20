@@ -1,12 +1,12 @@
 {
-    "contents" : "## This program computes and stores the inverse of a matrix.\n## When run, the program seeks the return value from the\n## global environment. if not found, the matrix inverse\n## compututation is performed storing the results within the\n## global environment.\n\n## makeCacheMatrix is used to cache a list of functions\n## for storing and retrieving inverted matrices\nmakeCacheMatrix <- function(x = numeric()) {\n        m <- NULL\n        set <- function(y) {\n                x <<- y\n                m <<- NULL\n        }\n        get <- function() x\n        setinverse <- function(inverse) m <<- inverse\n        getinverse <- function() m\n        list(set = set, get = get,\n             setinverse = setinverse,\n             getinverse = getinverse)\n}\n\n\n## Retrieve cached matrix if it exists. Call this function\n## after storing function list in the global environment using\n## the makeCacheMatrix function\ncacheSolve <- function(x) {\n        ## Return a matrix that is the inverse of 'x'\n        m <- x$getinverse()\n        if(!is.null(m)) {\n                message(\"getting cached data\")\n                return(m)\n        }\n        data <- x$get()\n        m <- solve(data)\n        x$setinverse(m)\n        m        \n}\n\n\n\n   ",
+    "contents" : "## This program computes and stores the inverse of a matrix.\n## When run, the program seeks the return value from the\n## global environment. if not found, the matrix inverse\n## compututation is performed storing the results within the\n## global environment.\n\n## makeCacheMatrix is used to cache a list of functions\n## for storing and retrieving inverted matrices\nmakeCacheMatrix <- function(x = numeric()) {\n        m <- NULL\n        set <- function(y) {\n                x <<- y\n                m <<- NULL\n        }\n        get <- function() x\n        setinverse <- function(inverse) m <<- inverse\n        getinverse <- function() m\n        list(set = set, get = get,\n             setinverse = setinverse,\n             getinverse = getinverse)\n}\n\n\n## Retrieve cached matrix if it exists. Call this function\n## after storing function list in the global environment using\n## the makeCacheMatrix function\ncacheSolve <- function(x) {\n        ## Return a matrix that is the inverse of 'x'\n        m <- x$getinverse()\n        if(!is.null(m)) {\n                message(\"getting cached data\")\n                return(m)\n        }\n        data <- x$get()\n        # This is where the matrix is inverted \n        m <- solve(data)\n        #Store in global environment\n        x$setinverse(m)\n        m        \n}\n\n\n\n   ",
     "created" : 1421762039222.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3351902768",
+    "hash" : "3756658459",
     "id" : "DD7777CB",
-    "lastKnownWriteTime" : 1421769909,
+    "lastKnownWriteTime" : 1421771123,
     "path" : "C:/__edu/Git/ProgrammingAssignment2/cachematrix.R",
     "project_path" : "cachematrix.R",
     "properties" : {

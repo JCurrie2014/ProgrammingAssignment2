@@ -32,7 +32,9 @@ cacheSolve <- function(x) {
                 return(m)
         }
         data <- x$get()
+        # This is where the matrix is inverted 
         m <- solve(data)
+        #Store in global environment
         x$setinverse(m)
         m        
 }

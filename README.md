@@ -13,19 +13,6 @@ the R language and how they can be manipulated to preserve state inside
 of an R object.
 
 
-
-## Testing script - used to test funciton calls
-## Create original matrix (mo)
-mo = rbind(c(1, -1/4), c(-1/4, 1))
-## Store list of for storing and retrieving inverted matrix
-mi<-makeCacheMatrix(mo)
-## Display original matrix 
-mo
-message("Retrieve inverse matrix of mo (mi)")
-## Retrieve cached matrix
-cacheSolve(mi)
-
-
 ### Example: Caching the Mean of a Vector
 
 In this example we introduce the `<<-` operator which can be used to
@@ -117,3 +104,15 @@ In order to complete this assignment, you must do the following:
 ### Grading
 
 This assignment will be graded via peer assessment.
+
+
+## Testing script - used to test funciton calls
+# Create original matrix (mo)
+mo = rbind(c(1, -1/4), c(-1/4, 1))
+# Store list of for storing and retrieving inverted matrix
+mi<-makeCacheMatrix(mo)
+# Display original matrix 
+mo
+message("Retrieve inverse matrix of mo (mi)")
+# Retrieve cached matrix
+cacheSolve(mi)
