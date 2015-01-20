@@ -107,12 +107,12 @@ This assignment will be graded via peer assessment.
 
 
 ## Testing script - used to test funciton calls
-# Create original matrix (mo)
+### Create original matrix (mo)
 mo = rbind(c(1, -1/4), c(-1/4, 1))
-# Store list of for storing and retrieving inverted matrix
+### Store list of for storing and retrieving inverted matrix
 mi<-makeCacheMatrix(mo)
-# Display original matrix 
+### Display original matrix 
 mo
 message("Retrieve inverse matrix of mo (mi)")
-# Retrieve cached matrix
+### Retrieve cached matrix
 cacheSolve(mi)
